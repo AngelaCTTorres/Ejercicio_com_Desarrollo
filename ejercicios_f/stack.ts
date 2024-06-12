@@ -70,15 +70,15 @@ personaStack.push(new Persona(25, 'María', 'Gómez', 'Doctora'));
 personaStack.push(new Persona(28, 'Angela', 'torres', 'Desarrolladora de software'));
 
 
-let persona = personaStack.peek();
+let personaa = personaStack.peek();
 
-if (persona) {
-    console.log(`${persona.getNombre()} ${persona.getApellido()}, ${persona.getProfesion()}`); 
+if (personaa) {
+    console.log(`${personaa.getNombre()} ${personaa.getApellido()}, ${personaa.getProfesion()}`); 
 }
 
-persona = personaStack.pop();
-if (persona) {
-    console.log(`${persona.getNombre()} ${persona.getApellido()}, ${persona.getProfesion()}`);
+personaa = personaStack.pop();
+if (personaa) {
+    console.log(`${personaa.getNombre()} ${personaa.getApellido()}, ${personaa.getProfesion()}`);
 
 console.log(personaStack.size()); 
 console.log(personaStack.isEmpty()); 

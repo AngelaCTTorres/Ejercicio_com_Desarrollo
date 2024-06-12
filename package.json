@@ -1,0 +1,22 @@
+{
+  "name": "ejercicio_com_desarrollo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build" : "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+
+  "dependencies": {
+    "express": "^4.19.2",
+    "javascript": "^1.0.0"
+  },
+
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
+}

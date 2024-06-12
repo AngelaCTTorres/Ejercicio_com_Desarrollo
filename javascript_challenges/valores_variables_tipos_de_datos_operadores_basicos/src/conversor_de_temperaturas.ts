@@ -1,11 +1,11 @@
 // Función para convertir de Celsius a Fahrenheit
-function celsiusToFahrenheit(celsius) {
-    return celsius * 9 / 5 + 32;
+function celsiusToFahrenheit(celsius: number): number {
+    return (celsius * 9/5) + 32;
 }
 
 // Función para convertir de Fahrenheit a Celsius
-function fahrenheitToCelsius(fahrenheit) {
-    return (fahrenheit - 32) * 5 / 9;
+function fahrenheitToCelsius(fahrenheit: number): number {
+    return (fahrenheit - 32) * 5/9;
 }
 
 // Ejemplo de uso

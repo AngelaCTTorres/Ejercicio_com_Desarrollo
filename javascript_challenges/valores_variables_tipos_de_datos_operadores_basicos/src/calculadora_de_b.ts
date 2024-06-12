@@ -1,8 +1,8 @@
 
 
 // Variables para peso (kg) y altura (metros)
-let peso = 98; // Peso en kilogramos
-let altura = 1.85; // Altura en metros
+let peso = 87; // Peso en kilogramos
+let altura = 1.57; // Altura en metros
 
 // Calcular BMI
 let bmi = peso / (altura * altura);
