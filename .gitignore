@@ -1,0 +1,37 @@
+# Dependencias de Node
+node_modules/
+
+# Archivos de compilación
+dist/
+build/
+
+# Configuración de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Directorios de datos de Next.js
+.next/
+out/
+
+# Logs
+logs/
+*.log
+
+# Directorios de módulos y paquetes
+.pnp/
+.pnp.js
+
+# Archivos de caché y temporales
+.cache/
+.tmp/
+
+# Archivos de configuración específicos de IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Directorios de pruebas
+coverage/
