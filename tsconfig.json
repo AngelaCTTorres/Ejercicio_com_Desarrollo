@@ -22,6 +22,11 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "javascript_challenges/Calculadora_de_b/conversor_de_temperaturas.ts"]
+  "exclude": ["node_modules","**/*.spec.ts"]
 }
+
+
+
+  // Exclude 'node_modules' and test files
+
 
