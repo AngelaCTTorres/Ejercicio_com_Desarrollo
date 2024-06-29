@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Busca la pareja</title>
+       <link rel="stylesheet" href="./style.css">
+       <script src="scrip.js" async></script> <!--src="scrip.js":El atributo src especifica la URL del archivo JavaScript que se va a incluir. En este caso, el archivo se llama scrip.js. async:El atributo async permite que el script se descargue y ejecute de manera asíncrona con respecto al resto del contenido de la página. Esto significa que el navegador puede continuar analizando el HTML mientras se descarga el script.-->
+</head>
+
+<body>
+
+<div class="page-title">Busca la Pareja <br>
+<span class="overlay-text-small">por Angela Torres</span></div> 
+
+
+<!--area de inicio y fin -->
+<div class="overlay-text visible" >Clic para comenzar</div> 
+
+  <div id="game-over-text" class="overlay-text">JUEGO TERMINADO<span class="overlay-text-small"> Clic para comenzar</span></div>
+
+  <div id="victory-text" class="overlay-text"> VICTORIA <span class="overlay-text-small"> Clic para comenzar</span></div>
+
+<!--Contenedor juego-->
+  <div class="game-container">
+
+    <div class="game-info-container">
+      <div class="game-info"> Tiempo <span id="time-remaining">30</span></div>
+      <div class="game-info"> voltea <span id="flips">0</span></div>
+    </div>
+
+    <!--inicio de cartas son 6-->
+
+    <div class="card">
+       <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+       <div class="card-front card-face"><img class="card-value" src="./imagenes/cat (1).png"></div>
+   </div>
+
+   <div class="card">
+       <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+       <div class="card-front card-face"><img class="card-value" src="./imagenes/socks.png"></div>
+   </div>
+
+   <div class="card">
+       <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+       <div class="card-front card-face"><img class="card-value" src="./imagenes/cat-lovers (1).png"></div>
+   </div>
+
+   <div class="card">
+       <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+       <div class="card-front card-face"><img class="card-value" src="./imagenes/cat (1).png"></div>
+   </div>
+
+   <div class="card">
+       <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+       <div class="card-front card-face"><img class="card-value" src="./imagenes/socks.png"></div>
+   </div>
+
+   <div class="card">
+       <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+       <div class="card-front card-face"><img class="card-value" src="./imagenes/cat-lovers (1).png"></div>
+   </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+*  {
+       margin: 0;
+       box-sizing: border-box; /* El contenido, padding y border están todos dentro de 200px Para evitar problemas de diseño y tener un modelo de caja más predecible, es común aplicar box-sizing: border-box globalmente a todos los elementos. Esto se hace usualmente al comienzo de tu CSS: */
+}
+
+html {
+       min-height: 100vh;
+       font-family: Arial;
+     }
+
+body {
+       width: 1440px;
+       height: 800px;
+       margin: 0;
+       background: radial-gradient(#710dd5, #2f055f);
+     }
+
+.page-title {
+width: 1440px;
+height: 50px;
+ color: #FFF;
+ margin: 10px auto;
+  font-family: Creepy, serif;
+  font-weight: normal; /*Establece el grosor del texto a un peso normal, font-weight: 100; (Thin) font-weight: 200; (Extra Light) font-weight: 300; (Light)font-weight: 400; (Normal)font-weight: 500; (Medium)font-weight: 600; (Semi Bold)font-weight: 700; (Bold)font-weight: 800; (Extra Bold)font-weight: 900; (Black)*/
+  text-align: center;
+  font-size: 4em; /*tamaño lectra*/
+}
+
+/*area de inicio*/
+
+.overlay-text {
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       z-index: 100;
+       display: none;  /*Oculta el elemento del documento. Este elemento no ocupa espacio en la página y no es renderizado.Uso Común: Para ocultar elementos que no deben ser visibles ni ocupar espacio en el flujo del documento. */
+       position: fixed;  /*Posiciona el elemento en una ubicación fija en relación con la ventana del navegador. El elemento permanece en su posición fija incluso cuando se hace scroll en la página.*/
+       justify-content: center;
+       align-items: center;       /* se utiliza para alinear elementos hijos a lo largo del eje transversal (el eje vertical en un contenedor de flex por defecto) en un contenedor de flex o grid. El valor center centra los elementos hijos a lo largo de este eje.*/
+       flex-direction: column;
+       color: #FFF;
+       font-size: 4em;
+       font-family: Creepy, serif;
+       transition: background-color 500ms, font-size 500ms;
+     }
+/*aqui empieza apracer el haz clic para comenzar*/
+.overlay-text.visible {
+       display: flex;
+       animation: overlay-grow 500ms forwards;  /*plica una animación al elemento usando la definición @keyframes overlay-grow. La animación dura 500 milisegundos y se ejecuta hacia adelante.Detalles: overlay-grow: Nombre de la animación definida en @keyframes.500ms: Duración de la animación, en este caso, 500 milisegundos. forwards: Modo de relleno (fill mode) de la animación. Esto significa que el elemento mantendrá el estilo de la última clave de la animación una vez que esta haya terminado.*/
+     }
+
+
+.overlay-text-small {
+              font-size: .3em;
+            }
+
+/*contenedor de juego*/
+
+.game-container {
+       margin: 50px auto;
+       display: grid;
+       grid-template-columns: repeat(3, auto); /*organza los elementos horizontal y verticalmente */
+       grid-gap: 10px;
+       justify-content: center;
+       perspective: 500px; /*Especifica la distancia desde el usuario hasta el plano Z donde se encuentra el elemento 3D. Se expresa en unidades de longitud como píxeles (px) o porcentajes */
+     }
+/*esta parte organizo todas lol elementos y los puso en orden */
+.game-info-container {
+       grid-column: 1 / -1;   /* establece el rango de columnas que un elemento abarca en una cuadrícula. Los valores 1 y -1 son límites para las columnas de la cuadrícula:1: Indica que el elemento comienza en la primera columna. -1: Indica que el elemento termina en la última columna, contando desde el final hacia el principio.*/
+       display: flex;         /*Esta propiedad convierte al elemento en un contenedor flexible (flex container). Esto permite usar flexbox para organizar los elementos hijos dentro de él.*/
+       justify-content: space-between;  /*Esta propiedad de flexbox controla cómo se distribuyen los elementos flexibles a lo largo del eje principal (horizontal, en este caso) dentro del contenedor flex.space-between distribuye los elementos a lo largo del eje principal con el primer elemento al inicio del contenedor y el último al final del contenedor. El espacio entre los elementos se distribuye uniformemente.*/
+     }
+ 
+.game-info {
+       color: #FFF;
+       font-size: 3em; /*Tamaño lectra contadores*/
+       
+     }
+
+/*inicio de cartas son 6*/
+
+.card {
+       position: relative; /*establece que el elemento se posicionará con respecto a su posición normal en el flujo del documento. Esto significa que cualquier posición especificada con top, right, bottom o left se basará en su posición original en el flujo de la página, no en la posición de otros elementos.*/
+       height: 300px;
+       width: 400px;
+     }
+
+.card.visible .card-back {
+       transform: rotateY(-180deg); 
+     }
+     
+.card-back {
+       background-color: #FFF;
+       border-color: #140a01;
+       transform: rotateY(0);   /*aplica una transformación de rotación en el eje Y al elemento. En este caso específico, rotateY(0) indica que no hay rotación aplicada en el eje Y, es decir, el elemento no está girado horizontalmente.*/
+     } 
+     
+
+.card-back:hover .spider {
+       transform: translateY(0); /*aplica una transformación de rotación en el eje Y al elemento. En este caso específico, rotateY(0) indica que no hay rotación aplicada en el eje Y, es decir, el elemento no está girado horizontalmente.*/
+}
+
+/*tomo todas figuras y las guardo una debajo de otra*/
+.card-face {
+       position: absolute;  /*Define que el elemento se posicionará de manera absoluta dentro de su contenedor padre, permitiendo control preciso sobre su ubicación.*/
+       display: flex;       /*Establece que los elementos hijos dentro de .card-face se mostrarán como un contenedor flexible, lo que facilita el alineamiento vertical y horizontal de los elementos secundarios.*/
+       justify-content: center;   /*Centra los elementos secundarios horizontalmente dentro del contenedor principal .card-face.*/
+       align-items: center;      /*Centra los elementos secundarios verticalmente dentro del contenedor principal .card-face.*/
+       width: 100%;              /*Hace que el ancho del elemento sea del 100% del contenedor padre, ocupando todo el espacio disponible horizontalmente.*/
+       height: 100%;             /*Establece que la altura del elemento sea del 100% del contenedor padre, ocupando todo el espacio disponible verticalmente.*/
+       border-radius: 12px;      /*Aplica esquinas redondeadas al elemento, con un radio de curvatura de 12 píxeles.*/
+       border-width: 1px;        /*Define el ancho del borde del elemento como 1 píxel*/
+       border-style: solid;      /*Especifica el estilo del borde como sólido.*/
+       overflow: hidden;         /*Oculta cualquier contenido que pueda desbordar el contenedor, manteniéndolo dentro de los límites establecidos.*/
+       transition: transform 500ms ease-in-out;    /*Aplica una transición suave de 500 milisegundos al transformar el elemento, con un efecto de aceleración y desaceleración.*/
+       backface-visibility: hidden;  /*Oculta la cara posterior del elemento cuando se aplica una rotación 3D, mejorando la representación visual en transformaciones 3D.*/
+     }
+
+
+.spider {
+       align-self: flex-start;    /*Esta propiedad se usa en elementos que son hijos de un contenedor con display: flex;. align-self controla la alineación vertical del elemento dentro del contenedor flex. En este caso, flex-start alinea el elemento en la parte superior del contenedor flex.*/
+       transition: transform 100ms ease-in-out; /* aplica una transición suave de 100 milisegundos al transformar el elemento. La propiedad transform especifica qué propiedad CSS (en este caso, transform) se verá afectada por la transición. ease-in-out define la función de temporización para la transición, lo que significa que comenzará lentamente, se acelerará en el medio y luego se desacelerará hacia el final.*/
+       transform: translateY(-10px);   /*aplica una transformación al elemento, en este caso, una traslación vertical (translateY). -10px indica que el elemento se moverá hacia arriba 10 píxeles respecto a su posición original. Esto puede usarse para crear efectos de animación, desplazando el elemento hacia arriba en respuesta a ciertos eventos o estados.*/
+     }
+
+.card.visible .card-front {
+       transform: rotateY(0); /*aplica una transformación de rotación en el eje Y al elemento. En este caso específico, rotateY(0) indica que no hay rotación aplicada en el eje Y, es decir, el elemento no está girado horizontalmente.*/
+     }
+/*animacion*/
+.card.matched .card-front .card-value {
+       animation: dance 1s linear infinite 500ms; /*aplica una animación a un elemento. Vamos a desglosar cada parte de la propiedad animation:
+
+       dance:
+       
+       Este es el nombre de la animación. Debe corresponder a un @keyframes dance definido en tu CSS, donde se especifican las etapas de la animación.
+       1s:
+       
+       Este es el tiempo de duración de un ciclo completo de la animación. En este caso, la animación dura 1 segundo.
+       linear:
+       
+       Esta es la función de temporización. linear significa que la animación tiene una velocidad constante de principio a fin, sin aceleración ni desaceleración.
+       infinite:
+       
+       Esto significa que la animación se repetirá infinitamente.
+       500ms:
+       
+       Este es el retraso antes de que comience la animación por primera vez. En este caso, la animación esperará 500 milisegundos antes de comenzar.*/
+     }
+
+
+.card-front:hover .card-value {
+       transform: scale(1);   /*.card-front:hover .card-value:
+
+       Este es un selector combinado. Afecta a cualquier elemento con la clase .card-value que sea hijo de un elemento con la clase .card-front cuando el elemento .card-front está en estado de hover.
+       transform: scale(1);:
+       
+       Esta es la propiedad que se aplica al elemento .card-value cuando se cumple la condición anterior. transform: scale(1); significa que el elemento .card-value se escalará a su tamaño original (sin aumento ni reducción).*/
+     }
+
+     /*en esta parte las imagenes ya se organzian y las posteriores quedan en su lugar*/
+.card-front {
+       background-color: #0daeff;
+       border-color: #ffffff;
+       transform: rotateY(180deg); /*e utiliza para rotar un elemento alrededor de su eje Y en 180 grados. Esta transformación produce un efecto de giro tridimensional, como si el elemento estuviera siendo volteado de adelante hacia atrás.*/
+     }
+
+
+.card-value {
+       position: relative;
+       transition: transform 100ms ease-in-out;
+       transform: scale(.9);
+     }
+/*animaciones */
+     @keyframes dance {  /*Descripción: Define una animación llamada dance que hace que el elemento rote de lado a lado.0%, 100%: En el inicio (0%) y el final (100%) de la animación, el elemento tiene una rotación de 0 grados.25%: En el 25% del tiempo de la animación, el elemento rota -30 grados.75%: En el 75% del tiempo de la animación, el elemento rota 30 grados.Esta animación da un efecto de "baile" al balancear el elemento de un lado a otro.*/
+       0%, 100% {
+         transform: rotate(0)
+       }
+       25% {
+         transform: rotate(-30deg)
+       }
+       75% {
+         transform: rotate(30deg)
+       }
+     }
+
+     /*esta  area organiza el tamaño de la lectra de 'clic para comenzar' y tambien coje el color del fonfo y lo opcada es el inicio*/
+     @keyframes overlay-grow {    /*Descripción: Define una animación llamada overlay-grow que cambia el color de fondo y el tamaño de la fuente de un elemento.from: Al comienzo de la animación, el color de fondo es transparente (rgba(0, 0, 0, 0)) y el tamaño de la fuente es 0. to: Al final de la animación, el color de fondo es negro con 80% de opacidad (rgba(0, 0, 0, 0.8)) y el tamaño de la fuente es 10em.Esta animación se usa para hacer crecer un overlay desde transparente hasta opaco y aumentar el tamaño de la fuente.*/
+       from {
+         background-color: rgba(0, 0, 0, 0);
+         font-size: 0;
+       }
+       to {
+         background-color: rgba(0, 0, 0, .8);
+         font-size: 7em;
+       }
+     }
+     
+     /*esta parte vuelve el diseño responsil*/
+     @media (max-width: 600px) {  /*Descripción: Define estilos específicos para pantallas con un ancho máximo de 600 píxeles. .game-container: En dispositivos pequeños, el contenedor del juego utiliza una cuadrícula con dos columnas automáticas..game-info-container: En dispositivos pequeños, el contenedor de información del juego se muestra en una dirección de columna (vertical) y sus elementos hijos se alinean al centro. Estos estilos aseguran que el contenido se adapte y se vea bien en dispositivos móviles.*/
+       .game-container {
+         grid-template-columns: repeat(2, auto) /*cuando esta en pantallas pequeñas se adapatanlas columnas*/
+       }
+     
+       .game-info-container {
+         flex-direction: column;
+         align-items: center;
+       }
+     }
+
+
+     /*En este punto solo esta ya el diseño pero no tiene funcionalidad ahora a empezarle a dar funcionalidad en js*/
