@@ -5,21 +5,24 @@
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Busca la pareja</title>
        <link rel="stylesheet" href="./style.css">
-       <script src="scrip.js" async></script> <!--src="scrip.js":El atributo src especifica la URL del archivo JavaScript que se va a incluir. En este caso, el archivo se llama scrip.js. async:El atributo async permite que el script se descargue y ejecute de manera asíncrona con respecto al resto del contenido de la página. Esto significa que el navegador puede continuar analizando el HTML mientras se descarga el script.-->
+       <script src="scrip.js" async></script> <!--src="scrip.js":El atributo src especifica la URL del archivo JavaScript que se va a incluir. En este caso, el archivo se llama scrip.js.
+         async:El atributo async permite que el script se descargue y ejecute de manera asíncrona con respecto al resto del contenido de la página. Esto significa que el navegador puede continuar analizando el HTML mientras se descarga el script.-->
 </head>
 
 <body>
 
-<div class="page-title">Busca la Pareja <br>
-<span class="overlay-text-small">por Angela Torres</span></div> 
+<div  class="page-title">Busca la Pareja <br>
+<span  class="overlay-text-small">por Angela Torres</span></div> 
 
 
 <!--area de inicio y fin -->
-<div class="overlay-text visible" >Clic para comenzar</div> 
+<div id="titulo" class="overlay-text visible" >Play</div> 
 
-  <div id="game-over-text" class="overlay-text">JUEGO TERMINADO<span class="overlay-text-small"> Clic para comenzar</span></div>
+<div id="victory-text2" class="overlay-text"> VICTORIA <span class="overlay-text-small"></span> <button id="next-level">Siguiente Nivel</button></div>
 
-  <div id="victory-text" class="overlay-text"> VICTORIA <span class="overlay-text-small"> Clic para comenzar</span></div>
+  <div id="game-over-text" class="overlay-text" >JUEGO TERMINADO<span class="overlay-text-small" id="reset"> </span></div>
+
+  <div id="victory-text" class="overlay-text" > VICTORIA <span class="overlay-text-small"  id="reset"></span></div>
 
 <!--Contenedor juego-->
   <div class="game-container">
@@ -30,6 +33,8 @@
     </div>
 
     <!--inicio de cartas son 6-->
+
+    <div id="level-1" class="game-container" >
 
     <div class="card">
        <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
@@ -60,6 +65,55 @@
        <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
        <div class="card-front card-face"><img class="card-value" src="./imagenes/cat-lovers (1).png"></div>
    </div>
+</div>
+<!--nivel 2 estructura-->
+
+<div id="level-2" class="game-container2 nivel_2" >
+
+  <!-- Inicio de cartas son 8 -->
+  <div class="card">
+    <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+    <div class="card-front card-face"><img class="card-value" src="./imagenes/cat (1).png"></div>
+</div>
+
+<div class="card">
+    <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+    <div class="card-front card-face"><img class="card-value" src="./imagenes/socks.png"></div>
+</div>
+
+<div class="card">
+    <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+    <div class="card-front card-face"><img class="card-value" src="./imagenes/cat-lovers (1).png"></div>
+</div>
+
+<div class="card">
+  <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+  <div class="card-front card-face"><img class="card-value" src="./imagenes/cat-lovers.png"></div>
+</div>
+
+<div class="card">
+  <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+  <div class="card-front card-face"><img class="card-value" src="./imagenes/cat (1).png"></div>
+</div>
+
+<div class="card">
+  <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+  <div class="card-front card-face"><img class="card-value" src="./imagenes/socks.png"></div>
+</div>
+
+<div class="card">
+  <div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+  <div class="card-front card-face"><img class="card-value" src="./imagenes/cat-lovers (1).png"></div>
+</div>
+
+<div class="card">
+<div class="card-back card-face"><img class="spider" src="./imagenes/fondo_posterior.png"></div>
+<div class="card-front card-face"><img class="card-value" src="./imagenes/cat-lovers.png"></div>
+</div>
+
+
+
+</div>
 
 </div>
 

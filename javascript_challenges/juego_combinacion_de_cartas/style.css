@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); 
+
 *  {
        margin: 0;
        box-sizing: border-box; /* El contenido, padding y border están todos dentro de 200px Para evitar problemas de diseño y tener un modelo de caja más predecible, es común aplicar box-sizing: border-box globalmente a todos los elementos. Esto se hace usualmente al comienzo de tu CSS: */
 }
+
+
 
 html {
        min-height: 100vh;
@@ -16,14 +20,17 @@ body {
      }
 
 .page-title {
-width: 1440px;
-height: 50px;
- color: #FFF;
- margin: 10px auto;
-  font-family: Creepy, serif;
+  width: 1440px;
+  height: 30px;
+  color: #FFF;
+  margin: 10px auto;
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
   font-weight: normal; /*Establece el grosor del texto a un peso normal, font-weight: 100; (Thin) font-weight: 200; (Extra Light) font-weight: 300; (Light)font-weight: 400; (Normal)font-weight: 500; (Medium)font-weight: 600; (Semi Bold)font-weight: 700; (Bold)font-weight: 800; (Extra Bold)font-weight: 900; (Black)*/
   text-align: center;
   font-size: 4em; /*tamaño lectra*/
+ 
 }
 
 /*area de inicio*/
@@ -41,8 +48,10 @@ height: 50px;
        flex-direction: column;
        color: #FFF;
        font-size: 4em;
-       font-family: Creepy, serif;
        transition: background-color 500ms, font-size 500ms;
+       font-family: "Bebas Neue", sans-serif;
+       font-weight: 400;
+       font-style: normal;
      }
 /*aqui empieza apracer el haz clic para comenzar*/
 .overlay-text.visible {
@@ -56,8 +65,9 @@ height: 50px;
             }
 
 /*contenedor de juego*/
-
+/*level 1*/
 .game-container {
+       
        margin: 50px auto;
        display: grid;
        grid-template-columns: repeat(3, auto); /*organza los elementos horizontal y verticalmente */
@@ -65,16 +75,22 @@ height: 50px;
        justify-content: center;
        perspective: 500px; /*Especifica la distancia desde el usuario hasta el plano Z donde se encuentra el elemento 3D. Se expresa en unidades de longitud como píxeles (px) o porcentajes */
      }
+
+
 /*esta parte organizo todas lol elementos y los puso en orden */
 .game-info-container {
        grid-column: 1 / -1;   /* establece el rango de columnas que un elemento abarca en una cuadrícula. Los valores 1 y -1 son límites para las columnas de la cuadrícula:1: Indica que el elemento comienza en la primera columna. -1: Indica que el elemento termina en la última columna, contando desde el final hacia el principio.*/
        display: flex;         /*Esta propiedad convierte al elemento en un contenedor flexible (flex container). Esto permite usar flexbox para organizar los elementos hijos dentro de él.*/
-       justify-content: space-between;  /*Esta propiedad de flexbox controla cómo se distribuyen los elementos flexibles a lo largo del eje principal (horizontal, en este caso) dentro del contenedor flex.space-between distribuye los elementos a lo largo del eje principal con el primer elemento al inicio del contenedor y el último al final del contenedor. El espacio entre los elementos se distribuye uniformemente.*/
+       justify-content: space-around;  /*Esta propiedad de flexbox controla cómo se distribuyen los elementos flexibles a lo largo del eje principal (horizontal, en este caso) dentro del contenedor flex.space-between distribuye los elementos a lo largo del eje principal con el primer elemento al inicio del contenedor y el último al final del contenedor. El espacio entre los elementos se distribuye uniformemente.*/
+       height: 50px;
      }
  
 .game-info {
        color: #FFF;
-       font-size: 3em; /*Tamaño lectra contadores*/
+       font-size: 2em; /*Tamaño lectra contadores*/
+       font-family: "Bebas Neue", sans-serif;
+       font-weight: 400;
+       font-style: normal;
        
      }
 
@@ -82,9 +98,11 @@ height: 50px;
 
 .card {
        position: relative; /*establece que el elemento se posicionará con respecto a su posición normal en el flujo del documento. Esto significa que cualquier posición especificada con top, right, bottom o left se basará en su posición original en el flujo de la página, no en la posición de otros elementos.*/
-       height: 300px;
+       height: 280px;
        width: 400px;
      }
+
+
 
 .card.visible .card-back {
        transform: rotateY(-180deg); 
@@ -103,12 +121,13 @@ height: 50px;
 
 /*tomo todas figuras y las guardo una debajo de otra*/
 .card-face {
+      
        position: absolute;  /*Define que el elemento se posicionará de manera absoluta dentro de su contenedor padre, permitiendo control preciso sobre su ubicación.*/
        display: flex;       /*Establece que los elementos hijos dentro de .card-face se mostrarán como un contenedor flexible, lo que facilita el alineamiento vertical y horizontal de los elementos secundarios.*/
        justify-content: center;   /*Centra los elementos secundarios horizontalmente dentro del contenedor principal .card-face.*/
-       align-items: center;      /*Centra los elementos secundarios verticalmente dentro del contenedor principal .card-face.*/
+       align-items: flex-start;      /*Centra los elementos secundarios verticalmente dentro del contenedor principal .card-face.*/
        width: 100%;              /*Hace que el ancho del elemento sea del 100% del contenedor padre, ocupando todo el espacio disponible horizontalmente.*/
-       height: 100%;             /*Establece que la altura del elemento sea del 100% del contenedor padre, ocupando todo el espacio disponible verticalmente.*/
+       height: 280px;             /*Establece que la altura del elemento sea del 100% del contenedor padre, ocupando todo el espacio disponible verticalmente.*/
        border-radius: 12px;      /*Aplica esquinas redondeadas al elemento, con un radio de curvatura de 12 píxeles.*/
        border-width: 1px;        /*Define el ancho del borde del elemento como 1 píxel*/
        border-style: solid;      /*Especifica el estilo del borde como sólido.*/
@@ -167,6 +186,8 @@ height: 50px;
 
 
 .card-value {
+  width: 100%;
+  height: 100%;
        position: relative;
        transition: transform 100ms ease-in-out;
        transform: scale(.9);
@@ -207,6 +228,32 @@ height: 50px;
          align-items: center;
        }
      }
+/*nivel 2*/
+     .nivel_2:not(:first-child) {
+      display: none;
+  }
 
 
+
+/*level 2*/
+.game-container2 {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto); /*organza los elementos horizontal y verticalmente */
+  grid-gap: 10px;
+  justify-content: center;
+  perspective: 500px; /*Especifica la distancia desde el usuario hasta el plano Z donde se encuentra el elemento 3D. Se expresa en unidades de longitud como píxeles (px) o porcentajes */
+
+}
+.game-container2 .card {
+  position: relative; /*establece que el elemento se posicionará con respecto a su posición normal en el flujo del documento. Esto significa que cualquier posición especificada con top, right, bottom o left se basará en su posición original en el flujo de la página, no en la posición de otros elementos.*/
+  height: 280px;
+  width: 300px;
+
+
+}
+
+.hidden {
+  display: none ;
+}
      /*En este punto solo esta ya el diseño pero no tiene funcionalidad ahora a empezarle a dar funcionalidad en js*/
