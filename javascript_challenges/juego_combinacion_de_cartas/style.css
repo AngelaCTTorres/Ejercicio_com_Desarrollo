@@ -33,6 +33,17 @@ body {
  
 }
 
+#next-level{
+  width: 150px;
+  height: 70px;
+  border-radius: 10%;
+  background-color: #0c3dec;
+  color: rgb(255, 255, 255);
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-size: 20px; 
+}
+
 /*area de inicio*/
 
 .overlay-text {
