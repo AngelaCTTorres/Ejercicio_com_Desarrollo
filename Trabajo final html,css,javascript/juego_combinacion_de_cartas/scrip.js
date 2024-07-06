@@ -194,7 +194,7 @@ class MixOrMatch {
             document.getElementById('game-over-text').classList.remove('visible');
             document.getElementById('victory-text').classList.remove('visible');
             document.getElementById('titulo').classList.add('visible');
-            this.timeRemaining = totalTime;
+           this.timeRemaining = totalTime;
       
 
             this.startGame();
