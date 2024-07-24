@@ -1,4 +1,4 @@
-
+/*angela torres trujillo */
 
 // Variables para peso (kg) y altura (metros)
 let peso = 87; // Peso en kilogramos
