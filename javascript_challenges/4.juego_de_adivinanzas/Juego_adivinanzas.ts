@@ -1,4 +1,4 @@
-
+/*angela torres */
 class Juego {
        numeroSecreto: number;
        intentosM: number;
